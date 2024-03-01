@@ -2,6 +2,11 @@ from django.db import models
 
 
 class User(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    email = models.EmailField(max_length=200, verbose_name='Email')
+
+
+class Client(models.Model):
     first_name = models.CharField(max_length=100, verbose_name='Имя')
     last_name = models.CharField(max_length=100, verbose_name='Фамилия')
     email = models.EmailField(max_length=200, verbose_name='Email')
