@@ -18,7 +18,7 @@ class User(models.Model):
 
 class Client(models.Model):
     """Модель клиента"""
-    fio = models.CharField(max_length=150, verbose_name='ФИО клиента')
+    fio = models.CharField(max_length=150, verbose_name='ФИО')
     email = models.EmailField(max_length=100, verbose_name='Email')
     comments = models.TextField(max_length=250, verbose_name="Комментарий")
 
@@ -47,13 +47,13 @@ class LogsForClient(models.Model):
 
 class Sending(models.Model):
     """Модель для настройки рассылки"""
-    choices_periodic = [{'once_a_day': 'раз в день'},
-                        {'once_a_week': 'раз в неделю'},
-                        {'once_a_month': 'раз в месяц'}]
+    choices_periodic = [{'once_a_day', 'раз в день'},
+                        {'once_a_week', 'раз в неделю'},
+                        {'once_a_month', 'раз в месяц'}]
 
-    choices_status = [{'created': 'создана'},
-                      {'launched': 'запущена'},
-                      {'completed': 'завершена'}]
+    choices_status = [{'created', 'создана'},
+                      {'launched', 'запущена'},
+                      {'completed', 'завершена'}]
 
     mailing_time = models.TimeField(verbose_name="Время рассылки")
     periodicity_mailing = models.IntegerField(choices=choices_periodic, verbose_name='Периодичность рассылки')

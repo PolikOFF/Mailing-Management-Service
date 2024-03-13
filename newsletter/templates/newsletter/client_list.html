@@ -1,0 +1,10 @@
+{% extends 'newsletter/base.html' %}
+
+{% block content %}
+<div class="row text-center">
+    <p>Клиенты, которые нам доверяют</p>
+    {% for object in object_list %}
+        {% include 'newsletter/includes/inc_base_category.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

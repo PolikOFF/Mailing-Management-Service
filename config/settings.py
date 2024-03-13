@@ -75,16 +75,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-PSQL_KEY = os.getenv('PSQL_KEY')
+PSQL_KEY = os.getenv('PSQL_KEY',)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'newsletter',
         'HOST': 'localhost',
-        'USER': 'postgresql',
+        'USER': 'postgres',
         'PASSWORD': PSQL_KEY,
-        'PORT': 5432,
     }
 }
 
@@ -125,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
